@@ -1,0 +1,14 @@
+
+# Node artifact files
+node_modules/
+
+# Log files
+*.log
+
+# JetBrains IDE
+.idea/
+
+
+# dependencies
+/node_modules
+
