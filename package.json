@@ -5,12 +5,21 @@
   "main": "day1/day1.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "fs": "0.0.1-security"
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "babel-jest": "^27.4.4",
+    "fs": "0.0.1-security",
+    "jest": "27.2"
+  },
+  "jest": {
+    "transformIgnorePatterns": [
+      "/node_modules/"
+    ]
   }
 }

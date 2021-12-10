@@ -7,9 +7,7 @@ const buffer = fs.readFileSync(path.join(__dirname, '/day2/input.txt'));
 
 const inputString = buffer.toString().split('\n');
 
-
 const commands = inputString.map((command) => command.split(' '));
-
 
 //Part 1
 
@@ -37,23 +35,27 @@ console.log(forwardSum * depthPart1)
 
 //Part 2
 
-let horizontal = 0;
-let depth = 0;
-let aim = 0;
+export const getFinalPosition = (arr) => {
+    let horizontal = 0;
+    let depth = 0;
+    let aim = 0;
 
-commands.forEach((elem, index) => {
-    switch (elem[0]) {
-        case 'down':
-            aim += parseInt(elem[1]);
-            break;
-        case 'up':
-            aim -= parseInt(elem[1]);
-            break;
-        case 'forward':
-            horizontal += parseInt(elem[1]);
-            depth += (aim * elem[1])
-    }
-} )
+    arr.forEach((elem, index) => {
+        switch (elem[0]) {
+            case 'down':
+                aim += parseInt(elem[1]);
+                break;
+            case 'up':
+                aim -= parseInt(elem[1]);
+                break;
+            case 'forward':
+                horizontal += parseInt(elem[1]);
+                depth += (aim * elem[1])
+        }
+    } )
+
+    return horizontal * depth;
+}
 
 //prints result of part 2
-console.log(horizontal * depth);
+console.log(getFinalPosition(commands));
